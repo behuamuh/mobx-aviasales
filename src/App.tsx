@@ -1,26 +1,46 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled, { createGlobalStyle } from 'styled-components'
+import { observer } from 'mobx-react';
 
-function App() {
+import Header from './components/Header';
+import Filters from './components/Filters';
+import Sort from './components/Sort';
+import Tickets from './components/Tickets';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      <GlobalStyle />
+      <Header />
+      <Main>
+        <Filters />
+        <section>
+          <Sort />
+          <Tickets />
+        </section>
+      </Main>
+    </Wrapper>
   );
 }
 
-export default App;
+export default observer(App);
+
+const Wrapper = styled.div`
+  min-height: 100vh;
+  background-color: #F3F7FA;
+  font-family: Open Sans;
+`;
+
+const GlobalStyle = createGlobalStyle`
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+`;
+
+const Main = styled.main`
+  display: grid;
+  padding: 0 10%;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 20px;
+`;
