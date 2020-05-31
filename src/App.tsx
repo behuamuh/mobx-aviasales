@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Filters from './components/Filters';
 import Sort from './components/Sort';
 import Tickets from './components/Tickets';
+import { BACKGROUND } from './styles/const';
 
 const App = () => {
   return (
@@ -27,7 +28,7 @@ export default observer(App);
 
 const Wrapper = styled.div`
   min-height: 100vh;
-  background-color: #F3F7FA;
+  background-color: ${BACKGROUND};
   font-family: Open Sans;
 `;
 
