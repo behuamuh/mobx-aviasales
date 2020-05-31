@@ -36,7 +36,7 @@ class Store {
   }
 
   get loading() {
-    return this.showedTickets.length < 5 && ticketsStore.loading;
+    return ticketsStore.loading;
   }
 
   filterTickets(filter: string, tickets: Ticket[]): Ticket[] {

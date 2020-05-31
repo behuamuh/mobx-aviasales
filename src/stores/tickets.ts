@@ -22,7 +22,6 @@ class TicketsStore {
     }
 
     await this.loadChunc(searchId);
-    this.loading = false;
   }
 
   async getSearchId(): Promise<string | undefined> {
@@ -41,7 +40,12 @@ class TicketsStore {
       const { tickets, stop } = await response.json();
       this.tickets.push(...tickets);
 
-      if (!stop) this.loadChunc(searchId);
+      if (!stop) {
+        this.loadChunc(searchId);
+        return;
+      }
+
+      this.loading = false;
     } catch (error) {
       this.loadChunc(searchId);
     }

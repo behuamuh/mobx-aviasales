@@ -2,7 +2,7 @@ import React, { SyntheticEvent } from 'react';
 import styled from 'styled-components';
 import { observer } from 'mobx-react';
 import filtersStore from 'stores/filters';
-import { TEXT, BLUE, HOVER } from 'styles/const';
+import { TEXT, HOVER } from 'styles/const';
 import { Paper } from 'styles/primitives';
 import Checkbox from 'components/Checkbox';
 

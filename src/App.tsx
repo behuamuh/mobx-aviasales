@@ -15,10 +15,10 @@ const App = () => {
       <Header />
       <Main>
         <Filters />
-        <section>
+        <Content>
           <Sort />
           <Tickets />
-        </section>
+        </Content>
       </Main>
     </Wrapper>
   );
@@ -41,7 +41,15 @@ const GlobalStyle = createGlobalStyle`
 
 const Main = styled.main`
   display: grid;
-  padding: 0 10%;
+  padding: 0 12px;
   grid-template-columns: 1fr 2fr;
+  grid-template-rows: min-content 1fr;
   grid-gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+`;
+
+const Content = styled.section`
+  grid-row: 1 / 3;
+  grid-column: 2 / 3;
 `;
